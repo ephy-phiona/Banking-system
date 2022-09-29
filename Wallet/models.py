@@ -11,6 +11,9 @@ class Customer(models.Model):
     phone_number=models.CharField(max_length=15)
     gender=models.CharField(max_length=10)
     age=models.PositiveSmallIntegerField()
+    nationality=models.CharField(max_length=10,null=True)
+    marital_status=models.CharField(max_length=30, null = True)
+    are_you_employment=models.BooleanField(default=False)
 
 class Wallet(models.Model): 
     user_name=models.CharField(max_length=20)
@@ -22,7 +25,7 @@ class Wallet(models.Model):
     amount=models.IntegerField()
     date_created=models.DateTimeField()
     currency=models.ForeignKey('Currency',on_delete=models.CASCADE,related_name='wallet_currency')
-    status=models.CharField(max_length=20)
+    wallet_status=models.CharField(max_length=20)
     pin=models.IntegerField()
 
 class Currency(models.Model):
