@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import customer_profile, edit_customer, list_customers, register_account, register_card, register_currency, register_customer, register_loan, register_notification, register_thirdparty, register_transaction, register_wallet, register_reward
+from .views import customer_profile, edit_customer, list_customers, list_wallet, register_account, register_card, register_currency, register_customer, register_loan, register_notification, register_thirdparty, register_transaction, register_wallet, register_reward
 
 urlpatterns=[
     path("register/",register_customer, name="registration"),
@@ -14,6 +14,7 @@ urlpatterns=[
     path("card/",register_card, name="register_8"),
 # lists url
     path("list/", list_customers, name="list_customer"),
+    path("listwallet/", list_wallet, name="list_wallet"),
 
 # single page url
     path("customers/<int:id>/", customer_profile, name="customer_profile"),

@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from Wallet.models import Customer
+from Wallet.models import Customer, Wallet
 from .forms import CustomerRegistrationForm, WalletRegistrationForm , CurrencyRegistrationForm,TransactionRegistrationForm,RewardRegistrationForm,LoanRegistrationForm,NotificationsRegistrationForm,AccountRegistrationForm,ThirdPartyRegistrationForm,CardRegistrationForm
 
 
@@ -62,10 +62,16 @@ def list_customers(request):
     customers= Customer.objects.all()
     return render(request,"Wallet/list_customers.html",{"customer":customers})
 
+def list_wallet(request):
+    wallets= Wallet.objects.all()
+    return render(request,"Wallet/list_wallet.html",{"wallet":wallets})    
+
 # single page view
 def customer_profile(request,id):
     customer= Customer.objects.get(id=id)
     return render(request,"Wallet/customer_profile.html",{"customers":customer})
+
+    
 
 # editing data
 

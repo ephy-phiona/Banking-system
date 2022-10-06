@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <th>
+            <td>User name</td>
+            <td>Phone number</td>
+            <td>user email</td>
+            <!-- <td>Nationality</td>
+            <td>View profile</td> -->
+        </th>
+
+        {%for Wallet in wallets %}
+
+        <tr>
+            <td>{{ wallets.user_name}}</td>
+            <td>{{ customer.phone_number}}</td>
+            <td>{{ customer.user_email}}</td>
+            <!-- <td>{{ customer.nationality}}</td> -->
+            <!-- <td> <a href="{% url 'customer_profile' id=customer.id%}"> View Profile </a></td> -->
+        </tr>
+        {% endfor %}
+
+    </table>
+    
+</body>
+</html>
